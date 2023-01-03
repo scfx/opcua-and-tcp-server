@@ -6,9 +6,11 @@ services:
     ports:
       - "4840:4840"
     network_mode: "host"
+    restart: unless-stopped
   modbusserver:
     build:
       context: ./modbusserver
     ports:
       - "502:502"
     network_mode: "host"
+    restart: unless-stopped
