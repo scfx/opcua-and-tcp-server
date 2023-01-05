@@ -14,16 +14,16 @@ services:
       - "502:502"
     network_mode: "host"
     restart: always
-gateway:
-    build:
-      context: ./gateway
-      args:
-        OPC_UA_GATEWAY_VERSION: 1014.0.213
-    environment:
-    - baseUrl=https://felix.eu-latest.cumulocity.com
-    - tenantId=t682538178
-    - gatewayIdentifier=opcua-revpi
-    - gatewayName=OPCUA-Gateway
-    volumes:
-    - ./data/:/data
-    restart: always
+  gateway:
+      build:
+        context: ./gateway
+        args:
+          OPC_UA_GATEWAY_VERSION: 1014.0.213
+      environment:
+      - baseUrl=https://felix.eu-latest.cumulocity.com
+      - tenantId=t682538178
+      - gatewayIdentifier=opcua-revpi
+      - gatewayName=OPCUA-Gateway
+      volumes:
+      - ./data/:/data
+      restart: always
